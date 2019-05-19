@@ -1,4 +1,5 @@
 const fs = require('fs');   
+//variable de configuración para el tiempo de despliegue de cada curso
 const outputTime = 2;
 
 const readAll = () => {
@@ -31,8 +32,8 @@ const enrollment = (argv) => {
     if (courses){
         const itemArray = courses.find(itemArray => itemArray.id === argv.courseId);
         if (itemArray) {
-            const informacion = `El estudiante ${argv.name} con cedula ${argv.i} se ha matriculado` +
-                ` en el curso llamado ${itemArray.nombre} tiene una duracion de ${itemArray.duracion} horas y un valor de ${itemArray.valor} pesos`;
+            const informacion = `El estudiante ${argv.name} con cédula ${argv.i} se ha matriculado en el ` +
+                `curso ${itemArray.nombre} el cual tiene una duración de ${itemArray.duracion} horas y un valor de ${itemArray.valor} COPgit st`;
             fs.writeFile(`infoMatricula_${argv.id}.log`, informacion, (err) => {
                 if (err) throw (err);
                 console.log('Se ha registrado la información en el archivo de texto');
