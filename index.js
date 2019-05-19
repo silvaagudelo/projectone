@@ -1,6 +1,5 @@
 const yargs = require('yargs');
 const b = require('./base');
-
 console.log("Bienvenido a la academia de NodeJS! Disfrutalo.");
 yargs.command({
     command:"enroll",

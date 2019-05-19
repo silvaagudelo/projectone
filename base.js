@@ -24,7 +24,9 @@ const getCourses = () => {
 }
 
 const enrollment = (argv) => {
-    if (!argv.id || !argv.courseId || !argv.name){
+    console.log(argv.id,argv.courseId,argv.name);
+    
+    if (argv.id == null || argv.courseId == null || argv.name==null){
         console.log( "Argumentos incompletos, por favor verifique");
         return;
     }
@@ -33,7 +35,7 @@ const enrollment = (argv) => {
         const itemArray = courses.find(itemArray => itemArray.id === argv.courseId);
         if (itemArray) {
             const informacion = `El estudiante ${argv.name} con cédula ${argv.i} se ha matriculado en el ` +
-                `curso ${itemArray.nombre} el cual tiene una duración de ${itemArray.duracion} horas y un valor de ${itemArray.valor} COPgit st`;
+                `curso ${itemArray.nombre} el cual tiene una duración de ${itemArray.duracion} horas y un valor de ${itemArray.valor} COP`;
             fs.writeFile(`infoMatricula_${argv.id}.log`, informacion, (err) => {
                 if (err) throw (err);
                 console.log('Se ha registrado la información en el archivo de texto');
